@@ -1,0 +1,36 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:2.3.4.RELEASE"
+    }
+}
+
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '2.0.0.RELEASE'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = JavaVersion.VERSION_11
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter', version: '2.3.4.RELEASE'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '2.3.4.RELEASE'
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+
+// if not using spring boot plugin, use under lines.
+//jar {
+//    manifest {
+//        attributes 'Title': 'SpringBootDockerExample', 'Version': '0.0.1', 'Main-Class': 'com.heron.lee.Application'
+//    }
+//    from configurations.runtime.collect { zipTree(it) }
+//}

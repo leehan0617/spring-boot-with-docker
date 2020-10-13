@@ -1,0 +1,5 @@
+server:
+  port: 10624
+spring:
+  application:
+    name: Application
