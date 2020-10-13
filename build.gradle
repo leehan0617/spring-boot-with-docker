@@ -10,6 +10,7 @@ buildscript {
 plugins {
     id 'java'
     id 'org.springframework.boot' version '2.3.4.RELEASE'
+    // 이걸 안쓰면 jpa 설정할때 ClassNotFoundException javax.xml.bind.JAXBException 발생
     id 'io.spring.dependency-management' version '1.0.8.RELEASE'
 }
 
@@ -30,7 +31,7 @@ dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }
 
-// if not using spring boot plugin, use under lines.
+// 12라인의 플러그인때문에 bootJar이라는 task를 사용할 수 있으므로 아래 설정은 불필요.
 //jar {
 //    manifest {
 //        attributes 'Title': 'SpringBootDockerExample', 'Version': '0.0.1', 'Main-Class': 'com.heron.lee.Application'

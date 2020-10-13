@@ -2,6 +2,8 @@ server:
   port: 10625
 spring:
   datasource:
+    # docker 끼리 통신을 할 때는, ip대신 docker-compose.yml의 서비스명을 사용한다.
+    # 포트 또한 도커 내부에서 사용하는 포트를 입력한다.
     url: 'jdbc:mysql://sample-db:3306/sample_db'
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
