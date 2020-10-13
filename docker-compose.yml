@@ -1,0 +1,25 @@
+version: '3.3'
+
+services:
+  sample-db:
+    build:
+      context: .
+      dockerfile: Dockerfile-mysql
+    container_name: sample-db
+    image: sample-db
+    environment:
+      MYSQL_ROOT_HOST: '%'
+      MYSQL_DATABASE: 'sample_db'
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+    ports:
+      - '13332:3306'
+    volumes:
+      - ./volumes/sample-db:/var/lib/mysql
+  spring-boot:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: sample-spring-boot
+    image: sample-spring-boot
+    ports:
+      - '13333:10625'

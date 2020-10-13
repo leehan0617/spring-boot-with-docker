@@ -1,0 +1,6 @@
+CREATE DATABASE IF NOT EXISTS `sample_db` CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS `sample_db`.`profile` (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nickname VARCHAR(50) DEFAULT null
+);
