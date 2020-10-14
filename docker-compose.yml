@@ -20,6 +20,8 @@ services:
       context: .
       dockerfile: Dockerfile
     container_name: sample-spring-boot
-    image: sample-spring-boot
+    image: sample-spring-boot:0.2
     ports:
       - '13333:10625'
+    depends_on:
+      - sample-db
