@@ -31,3 +31,10 @@
     - 정상적으로 실행된 여부는 <code>docker ps</code> 명령어로 현재 실행중인 container 목록을 확인하면 된다. 
 
 * 서버 내에서 외부 통신이 필요한 경우 with/mysql 브랜치를 참고 (mysql 연동예제 작성)
+
+* docker-compose 사용시 주의사항
+
+    mysql url을 입력할때 ip는 docker-compose.yml 의 서비스 이름을 입력한다.<br>
+    포트는 Dockerfile의 expose 포트가 아닌 내부 포트를 입력한다.<br>
+    depends_on은 docker container 올라가는 순서를 의미한다. (완료 여부는 알 수 없음.)<br>
+    docker-compose.yml 의 image property는 tag와 같이 사용하는걸 권장한다. (나중에 버전이 많아 질경우 헤깔리지 않음)<br>
